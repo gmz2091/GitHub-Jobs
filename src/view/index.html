@@ -1,0 +1,101 @@
+<label id="check"
+  ><input class="opacity-0" type="checkbox" id="input_check" /><span
+    class="slider absolute h-6 w-6 cursor-pointer s-shadow-bottom rounded-full"
+  ></span
+></label>
+
+<section
+  class="w-full md:w-1/2 h-40 m-auto grid grid-cols-1 place-content-center"
+>
+  <form action="POST" id="form_search" class="relative">
+    <input
+      type="text"
+      id="input_search"
+      placeholder="Search Jobs"
+      class="px-6 py-3 focus:bg-gray-100 dark:placeholder-gray-600 dark:bg-gray-900 placeholder-gray-400 dark:text-gray-200 w-full rounded form-input"
+    />
+    <button
+      type="submit"
+      class="bg-blue-500 px-10 py-2 rounded text-white absolute right-1 top-1 focus:outline-none"
+    >
+      SEND
+    </button>
+  </form>
+</section>
+
+<section class="w-full h-screen grid md:grid-cols-12 gap-4">
+  <div class="md:col-span-4">
+    <div class="mt-2">
+      <form class="w-full max-w-sm mx-auto mb-6">
+        <div class="relative text-gray-400 focus-within:text-gray-600">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <input
+            id=""
+            class="py-3 px-4 bg-white placeholder-gray-400 form-input dark:placeholder-gray-600 dark:bg-gray-900 text-gray-900 dark:text-gray-600 rounded shadow-sm appearance-none w-full block pl-12 focus:outline-none"
+            placeholder="Cite, Zip Code"
+          />
+        </div>
+      </form>
+      <div class="mb-4 dark:text-gray-200">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            class="form-radio border border-gray-300"
+            name="radio"
+            value="London"
+          />
+          <span class="ml-2">London</span>
+        </label>
+      </div>
+      <div class="mb-4 dark:text-gray-200">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            class="form-radio border border-gray-300"
+            name="radio"
+            value="Amsterdan"
+          />
+          <span class="ml-2">Amsterdan</span>
+        </label>
+      </div>
+      <div class="mb-4 dark:text-gray-200">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            class="form-radio border border-gray-300"
+            name="radio"
+            value="New York"
+          />
+          <span class="ml-2">New York</span>
+        </label>
+      </div>
+      <div class="mb-4 dark:text-gray-200">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            class="form-radio border border-gray-300"
+            name="radio"
+            value="Berlin"
+          />
+          <span class="ml-2">Berlin</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="md:col-span-8" id="jobs_render"></div>
+</section>
