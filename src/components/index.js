@@ -132,7 +132,7 @@ const AlertError = (message) => {
     setTimeout(() => {
       div.remove();
     }, 1000);
-  }, 3000);
+  }, 2000);
   return div;
 };
 
