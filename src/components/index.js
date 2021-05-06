@@ -7,6 +7,7 @@ const Home = async () => {
   div.innerHTML = view;
   const form_search = div.querySelector("#form_search");
   const check = div.querySelector("#check");
+  const input_cite = div.querySelector("#input_cite");
 
   const main = document.getElementById("main");
 
@@ -36,6 +37,9 @@ const Home = async () => {
   }
 
   form_search.addEventListener("submit", SendData);
+  input_cite.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
 
   return div;
 };
@@ -44,6 +48,14 @@ export default Home;
 
 const SendData = async (e) => {
   e.preventDefault();
+  const value = document.getElementById("values_city");
+  console.log(value);
+
+  value.addEventListener("click", (e) => {
+    const locationName = e.target.value;
+    const cityNames = cityNameLocation(locationName);
+    getJobsData(input_search, cityNames);
+  });
 
   const input_search = document.getElementById("input_search").value;
   if (!(input_search === "")) {
@@ -53,10 +65,10 @@ const SendData = async (e) => {
   }
 };
 
-const getJobsData = async (job) => {
+const getJobsData = async (job, location) => {
   const jobs_render = document.getElementById("jobs_render");
   form_search.reset();
-  const data = await getData(job);
+  const data = await getData(job, location);
   console.log(data);
   const view = `
   ${data
@@ -122,4 +134,20 @@ const AlertError = (message) => {
     }, 1000);
   }, 3000);
   return div;
+};
+
+const cityNameLocation = (location) => {
+  switch (location) {
+    case "London":
+      return location;
+    case "Amsterdan":
+      return location;
+    case "USA":
+      return location;
+    case "Berlin":
+      return location;
+
+    default:
+      break;
+  }
 };
